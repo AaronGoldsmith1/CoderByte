@@ -23,4 +23,19 @@ console.log(reverseString("What's up?"))
 // reverseString('llo') = reverseString('lo') + l
 // reverseString('lo') = reverseString('o') + l
 // reverseString('o') = 'o'
-//
+
+
+// Using the JavaScript language, have the function FirstFactorial(num) take the num parameter being passed and return the factorial of it (e.g. if num = 4, return (4 * 3 * 2 * 1)). For the test cases, the range will be between 1 and 18 and the input will always be an integer.
+
+
+function firstFactorial(num) {
+  var newArray = [];
+  for (var i = 1; i <= num; i++){
+    newArray.push(i);
+  }
+  return newArray.reduce(function(a,b){
+    return a * b;
+  }, 1);
+};
+
+console.log(firstFactorial(4))
