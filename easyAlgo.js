@@ -8,6 +8,19 @@ function FirstReverse(str) {
 
 FirstReverse("Hello")
 
+//decrementing for loop
+function giveReverse(str){
+  newString = ""
+  for (var i = str.length-1; i >= 0; i--){
+    newString += str[i]
+  }
+  console.log(newString)
+  return newString
+}
+
+giveReverse("Slow Down!")
+
+
 //using recursion
 function reverseString(str){
   if (str.length <= 1){ ////condition to end the recursion
@@ -39,3 +52,28 @@ function firstFactorial(num) {
 };
 
 console.log(firstFactorial(4))
+
+
+// Using the JavaScript language, have the function LongestWord(sen) take the sen parameter being passed and return the largest word in the string. If there are two or more words that are the same length, return the first word from the string with that length. Ignore punctuation and assume sen will not be empty.
+
+//doesn't ignore punctuation
+function findLongestWord(str) {
+  var longestWord = str.split(' ').sort(function(a, b) { return b.length - a.length; });
+  console.log(longestWord[0])
+  return longestWord[0];
+}
+findLongestWord("The quick brown fox jumped over the lazy dog");
+
+
+// Have the function AlphabetSoup(str) take the str string parameter being passed and return the string with the letters in alphabetical order (ie. hello becomes ehllo). Assume numbers and punctuation symbols will not be included in the string.
+
+function AlphabetSoup(str) {
+  return str.split('').map(function(x){
+     return x.charCodeAt(x)
+   }).sort(function(a,b){
+     return a - b
+   }).map(function(x){
+     return String.fromCharCode(x)
+   }).join('')}
+
+AlphabetSoup(readline());
